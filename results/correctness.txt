@@ -1,0 +1,37 @@
+graph data/graph_100.bin: V=188430 E=11110180 dangling=338 max in-degree=59291
+CPU                 :  32 iterations      536.79 ms
+GPU pull (thread/page):  32 iterations       89.69 ms kernels      102.04 ms total  speedup   5.99x ( 5.26x incl. copies)  max rel err 0.0e+00  top20 same
+GPU warp/page       :  32 iterations       37.32 ms kernels       49.17 ms total  speedup  14.38x (10.92x incl. copies)  max rel err 1.4e-05  top20 same
+GPU push (atomic)   :  32 iterations       37.74 ms kernels       86.62 ms total  speedup  14.22x ( 6.20x incl. copies)  max rel err 6.9e-06  top20 same
+check: PASS
+
+Top 20 pages (CPU ranks):
+ 1. 0.013947  ภาษาอังกฤษ
+ 2. 0.006676  เวย์แบ็กแมชชีน
+ 3. 0.004938  เลขมาตรฐานสากลประจำหนังสือ
+ 4. 0.002370  ตัวระบุวัตถุดิจิทัล
+ 5. 0.002071  สหรัฐอเมริกา
+ 6. 0.001771  ประเทศไทย
+ 7. 0.001761  พิกัดภูมิศาสตร์
+ 8. 0.001547  เลขมาตรฐานสากลสำหรับนิตยสาร
+ 9. 0.001201  ประเทศญี่ปุ่น
+10. 0.001113  สหราชอาณาจักร
+11. 0.001052  ภาษาญี่ปุ่น
+12. 0.001026  ประเทศจีน
+13. 0.001016  ประเทศฝรั่งเศส
+14. 0.000978  ภาษา
+15. 0.000930  การจำแนกชั้นทางวิทยาศาสตร์
+16. 0.000902  ภาษาฝรั่งเศส
+17. 0.000850  กรุงเทพมหานคร
+18. 0.000850  พับเมด
+19. 0.000825  เขตเวลา
+20. 0.000824  ประเทศอินเดีย
+
+In-degree statistics (incoming links per article):
+graph  avg   median  p99  max     articles >1000 in-links  articles with 0 in-links
+10%    5.6   1       58   1,155   1                        7,255
+25%    14.4  3       134  3,981   8                        11,799
+50%    29.3  7       281  8,390   118                      15,779
+100%   59.0  13      563  59,291  561                      17,854
+Top-5 in-degrees (100%): 59,291 / 42,398 / 26,080 / 23,780 / 16,786
+Dump: thwiki-latest, 01-Oct-2026. Machine: Google Colab, Tesla T4 (15 GB), CUDA 13.0, driver 580.82.
